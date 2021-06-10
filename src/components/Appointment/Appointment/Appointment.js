@@ -10,8 +10,6 @@ const Appointment = () => {
     const handleDateChange = (date) => {
         setSelectedDate(date)
     }
-    console.log(selectedDate)
-    console.log(selectedDate.toDateString())
     return (
         <div>
             <Navbar></Navbar>

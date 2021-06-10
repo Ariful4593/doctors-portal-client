@@ -1,6 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
-import AppointmentForm from '../AppointmentForm/AppointmentForm';
 import BookingCard from '../BoogingCard/BookingCard';
 import './BookAppointment.css'
 const BookAppointment = ({ date }) => {
@@ -49,13 +47,13 @@ const BookAppointment = ({ date }) => {
         }
     ]
 
-    const [modalIsOpen, setIsOpen] = useState(false);
-    function openModal() {
-        setIsOpen(true);
-    }
-    function closeModal() {
-        setIsOpen(false);
-    }
+    // const [, setIsOpen] = useState(false);
+    // function openModal() {
+    //     setIsOpen(true);
+    // }
+    // function closeModal() {
+    //     setIsOpen(false);
+    // }
     return (
         <section>
             <h2 className="text-center text-brand mb-5">Available Appointments on {date.toLocaleDateString()}</h2>

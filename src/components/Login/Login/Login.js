@@ -27,7 +27,7 @@ const Login = () => {
     }
     const { register, handleSubmit } = useForm();
     const [newUser, setNewUser] = useState(false);
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    const [, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
     const [user, setUser] = useState({
         email: '',
@@ -94,7 +94,6 @@ const Login = () => {
                 })
                 .catch(function (error) {
                     // Handle Errors here.
-                    var errorCode = error.code;
                     var errorMessage = error.message;
                     const successfully = { ...user };
                     successfully.error = errorMessage;

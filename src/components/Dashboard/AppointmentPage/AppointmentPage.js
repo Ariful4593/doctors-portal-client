@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import AppointmentByDate from '../AppointmentByDate/AppointmentByDate';
-import Sidebar from '../Sidebar/Sidebar';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 
 import { useEffect } from 'react';
-import PatientPage from '../PatientPage/PatientPage';
 import { useContext } from 'react';
 import { UserContext } from '../../../App';
 const containerStyle = {
@@ -15,21 +13,21 @@ const containerStyle = {
 }
 const AppointmentPage = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
-    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+    const [loggedInUser] = useContext(UserContext)
     const [appointments, setAppointments] = useState([])
     const handleDateChange = (date) => {
         setSelectedDate(date)
     }
  
     useEffect(() => {
-        fetch('http://localhost:4000/appointmentsByDate', {
+        fetch('https://fathomless-badlands-18502.herokuapp.com/appointmentsByDate', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ date: selectedDate, email: loggedInUser.email })
         })
             .then(res => res.json())
             .then(data => setAppointments(data))
-    }, [selectedDate])
+    }, [loggedInUser.email, selectedDate])
 
     return (
         <section>

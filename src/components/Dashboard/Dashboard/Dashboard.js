@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
-import Sidebar from '../Sidebar/Sidebar';
 const Dashboard = () => {
 
-    const [selectedDate, setSelectedDate] = useState(new Date());
     const [appointments, setAppointments] = useState([])
     useEffect(() => {
-        fetch('http://localhost:4000/recentAppointment')
+        fetch('https://fathomless-badlands-18502.herokuapp.com/recentAppointment')
             .then(res => res.json())
             .then(data => setAppointments(data))
     }, [])

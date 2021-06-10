@@ -1,13 +1,8 @@
-import { app } from 'firebase';
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
 
 const AppointmentByDate = ({ appointments }) => {
-
     const handleStatus = (data) =>{
         console.log(data)
-        console.log('Hellow worls')
     }
     return (
         <div>

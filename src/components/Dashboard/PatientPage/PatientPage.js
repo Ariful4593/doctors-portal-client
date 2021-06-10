@@ -3,10 +3,9 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 const PatientPage = () => {
-    const [selectedDate, setSelectedDate] = useState(new Date());
     const [appointments, setAppointments] = useState([])
     useEffect(() => {
-        fetch('http://localhost:4000/recentAppointment')
+        fetch('https://fathomless-badlands-18502.herokuapp.com/recentAppointment')
             .then(res => res.json())
             .then(data => setAppointments(data))
     }, [])

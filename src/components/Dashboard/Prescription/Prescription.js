@@ -10,7 +10,7 @@ const Prescription = () => {
         setSelectedDate(date)
     }
     useEffect(() => {
-        fetch('http://localhost:4000/addAppointmentByDate', {
+        fetch('https://fathomless-badlands-18502.herokuapp.com/addAppointmentByDate', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ date: selectedDate })

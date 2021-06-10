@@ -21,7 +21,7 @@ const AddDoctor = () => {
         formData.append('name', info.name)
         formData.append('email', info.email)
 
-        fetch('http://localhost:4000/addADoctor', {
+        fetch('https://fathomless-badlands-18502.herokuapp.com/addADoctor', {
             method: 'POST',
             body: formData
         })
@@ -36,20 +36,20 @@ const AddDoctor = () => {
     }
     return (
         <form onSubmit={handleSubmit}>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input onBlur={handleBlur} type="email" class="form-control" name="email" placeholder="Enter email" />
+            <div className="form-group">
+                <label htmlFor="exampleInputEmail1">Email address</label>
+                <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Enter email" />
 
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Name</label>
-                <input onBlur={handleBlur} type="text" class="form-control" name="name" placeholder="Name" />
+            <div className="form-group">
+                <label htmlFor="exampleInputPassword1">Name</label>
+                <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Name" />
             </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Upload a image</label>
-                <input onChange={handleFileChange} type="file" class="form-control" id="exampleInputPassword1" placeholder="Name" />
+            <div className="form-group">
+                <label htmlFor="exampleInputPassword1">Upload a image</label>
+                <input onChange={handleFileChange} type="file" className="form-control" id="exampleInputPassword1" placeholder="Name" />
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" className="btn btn-primary">Submit</button>
         </form>
     );
 };
